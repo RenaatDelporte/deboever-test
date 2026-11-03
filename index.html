@@ -331,6 +331,9 @@ section[id],article[id]{scroll-margin-top:24px}
 </div>
 
 <script>
+(function(){var t=new Date().toISOString().slice(0,10);document.querySelectorAll('[data-sold-until]').forEach(function(e){if(e.getAttribute('data-sold-until')<t)e.remove();});var g=document.querySelector('.geen-aanbod');if(g&&!document.querySelector('#aanbod [data-sold-until], #aanbod [data-te-koop]'))g.hidden=false;})();
+</script>
+<script>
 (function(){var v=document.querySelector('.hero video');if(!v)return;v.muted=true;
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();return;}
 var p=v.play();if(p&&p.catch)p.catch(function(){});})();

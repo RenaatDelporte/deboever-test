@@ -79,7 +79,8 @@ section[id],article[id]{scroll-margin-top:24px}
 </header>
 
 <section id="aanbod" style="padding: 110px 24px">
-<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 48px 88px">
+<!-- Verkocht op 3 november 2026: blijft 6 maanden zichtbaar met SOLD!, verdwijnt automatisch na 3 mei 2027 -->
+<div data-sold-until="2027-05-03" style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 48px 88px">
 <div style="flex: 1 1 420px; min-width: 0; position: relative; aspect-ratio: 4 / 5; background: #2F241D; border: 1px solid rgba(242,235,221,0.14); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px"><span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 72px; line-height: 1; color: #C9AD82">Chloé</span><span style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #B8AA94">Foto volgt</span><span style="position: absolute; top: 24px; left: -10px; padding: 10px 22px; background: #8E2A1E; color: #F2EBDD; font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 500">Sold!</span></div>
 <article style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 24px">
 <div style="font-size: 13px; letter-spacing: 0.34em; text-transform: uppercase; font-weight: 400; color: #C9AD82">Recent verkocht</div>
@@ -93,6 +94,7 @@ section[id],article[id]{scroll-margin-top:24px}
 <p style="margin: 0; color: #D6C9B4">Chloé heeft een nieuwe eigenaar gevonden. Op zoek naar een paard? Mail ons gerust, we denken graag mee.</p>
 </article>
 </div>
+<p class="geen-aanbod" hidden style="max-width: 1240px; margin: 0 auto; padding: 40px 0; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #E4DAC8">Momenteel staan er geen paarden te koop. Mail ons gerust als u op zoek bent naar een paard.</p>
 </section>
 
 <section id="contact" style="background: #EFE8DA; color: #241B16; padding: 110px 24px">
@@ -165,6 +167,9 @@ section[id],article[id]{scroll-margin-top:24px}
 
 </div>
 
+<script>
+(function(){var t=new Date().toISOString().slice(0,10);document.querySelectorAll('[data-sold-until]').forEach(function(e){if(e.getAttribute('data-sold-until')<t)e.remove();});var g=document.querySelector('.geen-aanbod');if(g&&!document.querySelector('#aanbod [data-sold-until], #aanbod [data-te-koop]'))g.hidden=false;})();
+</script>
 <script>
 (function(){var v=document.querySelector('.hero video');if(!v)return;v.muted=true;
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();return;}
